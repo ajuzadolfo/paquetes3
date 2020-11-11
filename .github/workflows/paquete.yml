@@ -15,7 +15,7 @@ jobs:
       - name: Build with Maven
         run: |
           mvn -B deploy:deploy-file \
-            -Dfile=./target/paquete3-1.0.jar \
+            -Dfile=./paquete3-1.0.jar \
             -DpomFile=./pom.xml \
             -DrepositoryId=github \
             -Durl=https://maven.pkg.github.com/ajuzadolfo/paquetes3 \
