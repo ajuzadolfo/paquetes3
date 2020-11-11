@@ -13,10 +13,6 @@ jobs:
         with:
           java-version: 1.8
       - name: Build with Maven
-        run: |
-          mvn -B deploy:deploy-file \
-            -Dfile=./paquete3-1.0.jar \
-            -DpomFile=./pom.xml \
-            -DrepositoryId=github \
-            -Durl=https://maven.pkg.github.com/ajuzadolfo/paquetes3 \
-            -Dtoken=${{ secrets.AJUZ_TOKEN }} 
+        env:
+            GITHUB_TOKEN: ${{secrets.AJUZ_TOKEN }}
+        run: mvn deploy
